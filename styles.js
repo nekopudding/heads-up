@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const clr = {
   light: '#cfdff9',
   dark: '#4c618c',
-  darker: '#283654',
+  darker: '#1d2942',
 }
 export const styles = StyleSheet.create({
   textLight: {
@@ -31,5 +31,15 @@ export const styles = StyleSheet.create({
     fontWeight: '800',
     fontSize: 22,
     color: clr.light
+  },
+  h3: {
+    fontWeight: '500',
+    fontSize: 18,
+    color: clr.light
+  },
+  listItemDate: {
+    fontWeight: '500',
+    fontSize: 16,
+    color: clr.darker
   }
 })

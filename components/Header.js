@@ -9,7 +9,6 @@ const Header = (
     <View style={{
       textAlign: 'left',
       width: '100%',
-      paddingTop: 20, //account for status bar height
       // borderColor: 'black',
       // borderWidth: 1,
     }}>

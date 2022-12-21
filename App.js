@@ -13,6 +13,7 @@ export default function App() {
       width: Dimensions.get('window').width,
       backgroundColor: clr.dark,
       paddingHorizontal: 20,
+      paddingTop: 20, //account for status bar height
     }}>
       <Header/>
       <Body/>
