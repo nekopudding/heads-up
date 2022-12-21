@@ -1,16 +1,23 @@
-import { View, Text } from 'react-native'
+import { View, Text,StatusBar } from 'react-native'
 import React from 'react'
+import { styles } from '../styles'
 
 const Header = (
   ss
 ) => {
   return (
     <View style={{
-      paddingTop: 64,
       textAlign: 'left',
-      backgroundColor: 'red'
+      width: '100%',
+      paddingTop: 20, //account for status bar height
+      // borderColor: 'black',
+      // borderWidth: 1,
     }}>
-      <Text>Header</Text>
+      <Text style={{
+        marginTop: 20, 
+      ...styles.h1
+      }}>Heads Up</Text>
+      <Text style={styles.subtitle}>The Best Reminder for UBC Students</Text>
     </View>
   )
 }
