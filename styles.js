@@ -12,10 +12,6 @@ export const styles = StyleSheet.create({
   textDark: {
     color: clr.dark
   },
-  iconButtonLight: {
-    color: clr.light,
-    fill: clr.light
-  },
   h1: {
     fontSize: 48,
     fontWeight: '800',
@@ -41,5 +37,15 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 16,
     color: clr.darker
+  },
+  buttonContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    color: clr.light,
+    fontWeight: '600',
+    fontSize: 16,
   }
 })

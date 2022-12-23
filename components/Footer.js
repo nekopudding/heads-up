@@ -1,5 +1,8 @@
-import { View, Text,Button } from 'react-native'
+import { View, Text,Button,StyleSheet } from 'react-native'
 import React from 'react'
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { clr } from '../styles';
+import { styles } from '../styles';
 
 const Footer = () => {
   return (
@@ -8,22 +11,16 @@ const Footer = () => {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingHorizontal: 40,
+      paddingHorizontal: 5,
       paddingVertical: 20,
-      borderColor: 'black',
-      borderWidth: 1,
     }}>
-      <View>
-        <Button 
-          title='a'
-        />
-        <Text>Settings</Text>
+      <View style={styles.buttonContainer}>
+        <FontAwesome name="gear" color={clr.light} size={70}/>
+        <Text style={styles.buttonText}>Settings</Text>
       </View>
-      <View>
-        <Button 
-          title='b'
-        />
-        <Text>Add Tasks</Text>
+      <View style={styles.buttonContainer}>
+        <FontAwesome name="plus-circle" color={clr.light} size={70}/>
+        <Text style={styles.buttonText}>Add Tasks</Text>
       </View>
     </View>
   )

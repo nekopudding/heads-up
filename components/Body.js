@@ -4,16 +4,19 @@ import { clr, styles } from '../styles'
 
 const fillerList = [
   {
+    id: '1',
     title: 'CPEN 441 Assignment 2',
     dueDatetime: new Date(2022,10,14,23,59),
     estTime: 5, //hours
   },
   {
+    id: '2',
     title: 'Job Application Deadline',
     dueDatetime: new Date(2022,10,15,12),
     estTime: 5, //hours
   },
   {
+    id:'3',
     title: 'CPEN 441 Quiz 2',
     dueDatetime: new Date(22,10,16,13),
     estTime: 5, //hours
@@ -26,28 +29,39 @@ const dateOptions = { timeZone: 'PST', month: 'long', day: 'numeric',hour: 'nume
 const Body = () => {
   return (
     <View style={{
-      overflow: 'hidden'
+      overflow: 'hidden',
+      flexGrow: 1
     }}>
       <Text style={styles.h2}>most recent due:</Text>
-      <View style={{display:'flex',flexDirection: 'row',justifyContent:'center'}}><TextInput 
-        style={{
+      <View style={{
+        display:'flex',
+        flexDirection: 'row',
+        justifyContent: 'center'
+      }}>
+        <View style={{
+          display:'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
           marginTop: 16,
-          marginHorizontal: 10,
           paddingHorizontal: 16,
           height: 60, 
           width: 300,
           borderRadius: 20,
           backgroundColor: clr.darker,
-          color: clr.light,
-          fontSize: 16,
-          fontWeight: '500'
-        }}
-        defaultValue='Nothing at the moment.'
-      /></View>
+        }}>
+          <Text
+            style={{
+              color: clr.light,
+              fontSize: 16,
+              fontWeight: '500'
+            }}>Nothing at the moment.</Text>
+        </View>
+      </View>
+      
       <Text style={styles.h2}>upcoming deadlines:</Text>
       {fillerList.map((item,index) => { return ( <>
         <View 
-          key={index}
+          key={item.id}
           style={{
             display: 'flex',
             flexDirection: 'row',
