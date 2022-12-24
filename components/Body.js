@@ -59,9 +59,9 @@ const Body = () => {
       </View>
       
       <Text style={styles.h2}>upcoming deadlines:</Text>
-      {fillerList.map((item,index) => { return ( <>
+      <ScrollView>
+      {fillerList.map((item,index) => { return ( <React.Fragment key={item.id}>
         <View 
-          key={item.id}
           style={{
             display: 'flex',
             flexDirection: 'row',
@@ -94,7 +94,8 @@ const Body = () => {
             </Text>
           </View>
         </View>
-      </>)})}
+      </React.Fragment>)})}
+      </ScrollView>
     </View>
   )
 }
