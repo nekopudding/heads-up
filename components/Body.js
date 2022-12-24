@@ -2,31 +2,12 @@ import { View, Text,ScrollView,Image,TextInput,Dimensions } from 'react-native'
 import React from 'react'
 import { clr, styles } from '../styles'
 
-const fillerList = [
-  {
-    id: '1',
-    title: 'CPEN 441 Assignment 2',
-    dueDatetime: new Date(2022,10,14,23,59),
-    estTime: 5, //hours
-  },
-  {
-    id: '2',
-    title: 'Job Application Deadline',
-    dueDatetime: new Date(2022,10,15,12),
-    estTime: 5, //hours
-  },
-  {
-    id:'3',
-    title: 'CPEN 441 Quiz 2',
-    dueDatetime: new Date(22,10,16,13),
-    estTime: 5, //hours
-  }
-];
+
 
 const dateOptions = { timeZone: 'PST', month: 'long', day: 'numeric',hour: 'numeric',minute:'2-digit' };
 
 
-const Body = () => {
+const Body = ({taskList}) => {
   return (
     <View style={{
       overflow: 'hidden',
@@ -60,7 +41,7 @@ const Body = () => {
       
       <Text style={styles.h2}>upcoming deadlines:</Text>
       <ScrollView>
-      {fillerList.map((item,index) => { return ( <React.Fragment key={item.id}>
+      {taskList.map((item,index) => { return ( <React.Fragment key={item.id}>
         <View 
           style={{
             display: 'flex',
@@ -81,7 +62,7 @@ const Body = () => {
                 borderWidth: 3,
                 borderColor: clr.darker
               }}/>
-              {index !== fillerList.length -1 && <View style={{
+              {index !== taskList.length -1 && <View style={{
                 width: 3,
                 height:60,
                 backgroundColor: clr.darker

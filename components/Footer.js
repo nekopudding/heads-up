@@ -4,7 +4,10 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { clr } from '../styles';
 import { styles } from '../styles';
 
-const Footer = () => {
+const Footer = ({
+  setSettingsVisible,
+  setAddTasksVisible
+}) => {
   const [pressSetting,setPressSetting] = useState(false);
   const [pressAddTask,setPressAddTask] = useState(false);
   return (
@@ -19,6 +22,7 @@ const Footer = () => {
       <Pressable style={[styles.buttonContainer,{opacity: pressSetting ? 0.6 : 1}]} 
         onPressIn={()=>setPressSetting(true)} 
         onPressOut={()=>setPressSetting(false)}
+        onPress={()=>setSettingsVisible(true)}
       >
         <FontAwesome name="gear" color={clr.light} size={70}/>
         <Text style={[styles.buttonText,
@@ -27,6 +31,7 @@ const Footer = () => {
       <Pressable style={[styles.buttonContainer,{opacity: pressAddTask ? 0.6 : 1}]} 
         onPressIn={()=>setPressAddTask(true)} 
         onPressOut={()=>setPressAddTask(false)}
+        onPress={()=>setAddTasksVisible(true)}
       >
         <FontAwesome name="plus-circle" color={clr.light} size={70}/>
         <Text style={styles.buttonText}>Add Tasks</Text>
