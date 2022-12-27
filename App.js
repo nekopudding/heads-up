@@ -3,7 +3,7 @@ import { StyleSheet, Text, View,ScrollView,Image, TextInput, Dimensions, Animate
 import Footer from './components/Footer';
 import Body from './components/Body';
 import Start from './components/Start';
-// import AddTaskDialog from './components/AddTaskDialog';
+import AddTaskDialog from './components/AddTaskDialog';
 import { clr } from './styles';
 import { useEffect, useState } from 'react';
 
@@ -28,10 +28,6 @@ const fillerList = [
   }
 ];
 
-//on app load, fetch list from async storage
-useEffect(() => {
-  setTaskList(fillerList);
-},[])
 
 export default function App() {
   //manage dialog open state
@@ -45,6 +41,12 @@ export default function App() {
     list.sort((a,b) => a.dueDatetime.getTime() - b.dueDatetime.getTime());
     setTaskList(list);
   }
+
+  //on app load, fetch list from async storage
+  useEffect(() => {
+    setTaskList(fillerList);
+  },[])
+
 
   return (
     <>
