@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,ScrollView,Image, TextInput, Dimensions, Animated, Button,Alert, TouchableOpacity } from 'react-native';
 import Footer from './components/Footer';
-
 import Body from './components/Body';
-import Splash from './components/Splash';
+import Start from './components/Start';
+// import AddTaskDialog from './components/AddTaskDialog';
 import { clr } from './styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const fillerList = [
   {
@@ -28,15 +28,27 @@ const fillerList = [
   }
 ];
 
+//on app load, fetch list from async storage
+useEffect(() => {
+  setTaskList(fillerList);
+},[])
+
 export default function App() {
   //manage dialog open state
   const [settingsVisible,setSettingsVisible] = useState(false);
-  const [addTasksVisible,setAddTasksVisible] = useState(false);
-  const [taskList,setTaskList] = useState(fillerList)
+  const [addTaskVisible,setAddTaskVisible] = useState(false);
+  const [taskList,setTaskList] = useState([])
   
+  const addNewTask = (task) => {
+    const list = [...taskList,task];
+    //sort by earliest due date
+    list.sort((a,b) => a.dueDatetime.getTime() - b.dueDatetime.getTime());
+    setTaskList(list);
+  }
+
   return (
     <>
-    <Splash/>
+    <Start/>
     <View style={{
       height: Dimensions.get('window').height,
       width: Dimensions.get('window').width,
@@ -45,9 +57,9 @@ export default function App() {
       paddingTop: 20, //account for status bar height
     }}>
       <Body taskList={taskList}/>
-      <Footer setSettingsVisible={setSettingsVisible} setAddTasksVisible={setAddTasksVisible}/>
+      <Footer setSettingsVisible={setSettingsVisible} setAddTaskVisible={setAddTaskVisible}/>
     </View>
-    
+    <AddTaskDialog style={{display: addTaskVisible ? 'flex' : 'none'}}/>
     </>
   );
 }

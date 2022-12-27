@@ -6,7 +6,7 @@ import { styles } from '../styles';
 
 const Footer = ({
   setSettingsVisible,
-  setAddTasksVisible
+  setAddTaskVisible
 }) => {
   const [pressSetting,setPressSetting] = useState(false);
   const [pressAddTask,setPressAddTask] = useState(false);
@@ -31,10 +31,10 @@ const Footer = ({
       <Pressable style={[styles.buttonContainer,{opacity: pressAddTask ? 0.6 : 1}]} 
         onPressIn={()=>setPressAddTask(true)} 
         onPressOut={()=>setPressAddTask(false)}
-        onPress={()=>setAddTasksVisible(true)}
+        onPress={()=>setAddTaskVisible(true)}
       >
         <FontAwesome name="plus-circle" color={clr.light} size={70}/>
-        <Text style={styles.buttonText}>Add Tasks</Text>
+        <Text style={styles.buttonText}>Add Task</Text>
       </Pressable>
     </View>
   )
