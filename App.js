@@ -61,7 +61,10 @@ export default function App() {
       <Body taskList={taskList}/>
       <Footer setSettingsVisible={setSettingsVisible} setAddTaskVisible={setAddTaskVisible}/>
     </View>
-    <AddTaskDialog style={{display: addTaskVisible ? 'flex' : 'none'}}/>
+    <AddTaskDialog
+      addTaskVisible={addTaskVisible}
+      setAddTaskVisible={setAddTaskVisible}
+    />
     </>
   );
 }

@@ -9,8 +9,6 @@ const Header = (
     <View style={{
       textAlign: 'left',
       width: '100%',
-      // borderColor: 'black',
-      // borderWidth: 1,
     }}>
       <Text style={{
         marginTop: 20, 

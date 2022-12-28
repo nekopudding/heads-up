@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet,Dimensions } from "react-native";
 
 export const clr = {
   light: '#cfdff9',
@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
     color: clr.light,
   },
   h2: {
-    marginTop: 28,
     textTransform: 'capitalize',
     fontWeight: '800',
     fontSize: 22,
@@ -39,7 +38,6 @@ export const styles = StyleSheet.create({
     color: clr.darker
   },
   buttonContainer: {
-    display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -47,5 +45,51 @@ export const styles = StyleSheet.create({
     color: clr.light,
     fontWeight: '600',
     fontSize: 16,
+  },
+  centeredOverlay: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    position:'absolute',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    zIndex: 1000
+  },
+  dialogShadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height:2
+    },
+    shadowOpacity: 0.4,
+    shadowRadius:3,
+    elevation:5
+  },
+  addTaskDialog: {
+    width: 300,
+    height: 380,
+    backgroundColor:clr.light,
+    borderRadius: 16,
+    padding: 16,
+  },
+  dialogTitle: {
+    textTransform: 'capitalize',
+    fontWeight: '800',
+    fontSize: 28,
+    color: clr.dark
+  },
+  dialogLabel: {
+    fontWeight:'700',
+    fontSize: 20,
+    color: clr.dark
+  },
+  dialogInput: {
+    justifyContent:'center',
+    paddingHorizontal: 16,
+    height: 48, 
+    borderRadius: 16,
+    backgroundColor: clr.dark,
+    marginVertical: 4,
+    color: clr.light,
+    fontSize: 18,
   }
 })

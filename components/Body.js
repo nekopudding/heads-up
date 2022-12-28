@@ -1,11 +1,7 @@
 import { View, Text,ScrollView,Image,TextInput,Dimensions } from 'react-native'
 import React from 'react'
 import { clr, styles } from '../styles'
-
-
-
-const dateOptions = { timeZone: 'PST', month: 'long', day: 'numeric',hour: 'numeric',minute:'2-digit' };
-
+import { dateOptions } from '../dateOptions'
 
 const Body = ({taskList}) => {
   return (
@@ -13,16 +9,13 @@ const Body = ({taskList}) => {
       overflow: 'hidden',
       flexGrow: 1
     }}>
-      <Text style={styles.h2}>most recent due:</Text>
+      <Text style={{...styles.h2,marginTop: 28,}}>most recent due:</Text>
       <View style={{
-        display:'flex',
         flexDirection: 'row',
         justifyContent: 'center'
       }}>
         <View style={{
-          display:'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
+          justifyContent:'center',
           marginTop: 16,
           paddingHorizontal: 16,
           height: 60, 
@@ -39,19 +32,17 @@ const Body = ({taskList}) => {
         </View>
       </View>
       
-      <Text style={styles.h2}>upcoming deadlines:</Text>
+      <Text style={{...styles.h2,marginTop: 28}}>upcoming deadlines:</Text>
       <ScrollView>
       {taskList.map((item,index) => { return ( <React.Fragment key={item.id}>
         <View 
           style={{
-            display: 'flex',
             flexDirection: 'row',
             marginTop: (index === 0) ? 20: 0
           }}
         >
           <View style={{
             marginHorizontal: 4,
-            display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}>

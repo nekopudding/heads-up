@@ -15,15 +15,10 @@ const Splash = () => {
 
   return (
     <Animated.View style={{
+      ...styles.centeredOverlay,
       backgroundColor: clr.light,
       opacity:splashOpacity,
-      position: 'absolute',
-      width: Dimensions.get('window').width,
-      height: Dimensions.get('window').height,
-      zIndex: 1000,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
+      
     }} pointerEvents='none'>
       <Text style={{
         marginTop: 20, 

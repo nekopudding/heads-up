@@ -13,7 +13,6 @@ const Footer = ({
   return (
     <View style={{
       width: '100%',
-      display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingHorizontal: 5,
