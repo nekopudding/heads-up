@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { clr } from '../styles';
 import { styles } from '../styles';
+import Ripple from 'react-native-material-ripple';
 
 const Footer = ({
   setSettingsVisible,
@@ -18,7 +19,10 @@ const Footer = ({
       paddingHorizontal: 5,
       paddingVertical: 20,
     }}>
-      <Pressable style={[styles.buttonContainer,{opacity: pressSetting ? 0.6 : 1}]} 
+      <Ripple rippleColor={clr.light} rippleSize={200} 
+        rippleContainerBorderRadius={9999} 
+        style={[styles.buttonContainer,
+        {opacity: pressAddTask ? 0.6 : 1, left:-20}]} 
         onPressIn={()=>setPressSetting(true)} 
         onPressOut={()=>setPressSetting(false)}
         onPress={()=>setSettingsVisible(true)}
@@ -26,15 +30,18 @@ const Footer = ({
         <FontAwesome name="gear" color={clr.light} size={70}/>
         <Text style={[styles.buttonText,
        ]}>Settings</Text>
-      </Pressable>
-      <Pressable style={[styles.buttonContainer,{opacity: pressAddTask ? 0.6 : 1}]} 
+      </Ripple>
+      <Ripple rippleColor={clr.light} rippleSize={200} 
+        rippleContainerBorderRadius={9999} 
+        style={[styles.buttonContainer,
+        {opacity: pressAddTask ? 0.6 : 1, right:-20}]} 
         onPressIn={()=>setPressAddTask(true)} 
         onPressOut={()=>setPressAddTask(false)}
         onPress={()=>setAddTaskVisible(true)}
       >
         <FontAwesome name="plus-circle" color={clr.light} size={70}/>
-        <Text style={styles.buttonText}>Add Task</Text>
-      </Pressable>
+        <Text style={styles.buttonText}>Add Task</Text>  
+      </Ripple>
     </View>
   )
 }

@@ -39,7 +39,10 @@ export const styles = StyleSheet.create({
   },
   buttonContainer: {
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderRadius:9999,
+    height:70*1.5,
+    aspectRatio:1,
   },
   buttonText: {
     color: clr.light,

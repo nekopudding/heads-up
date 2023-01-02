@@ -4,8 +4,7 @@ import Header from './Header';
 import { clr,styles } from '../styles';
 
 const Splash = () => {
-  const splashOpacity = useRef(new
-    Animated.Value(1)).current;
+  const splashOpacity = useRef(new Animated.Value(1)).current;
   
     useEffect(() => {
       Animated.timing(splashOpacity, {toValue: 0,duration:300,useNativeDriver: true,delay: 1000})
