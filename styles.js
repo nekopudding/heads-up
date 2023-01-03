@@ -94,5 +94,26 @@ export const styles = StyleSheet.create({
     marginVertical: 4,
     color: clr.light,
     fontSize: 18,
+  },
+  hoursContainer: {
+    flexDirection:'row',
+    alignItems:'center'
+  },  
+  hoursInput: {
+    justifyContent:'center',
+    paddingHorizontal: 16,
+    height: 48, 
+    width: 40,
+    borderRadius: 16,
+    backgroundColor: clr.dark,
+    marginVertical: 4,
+    color: clr.light,
+    fontSize: 18,
+  },
+  hoursLabel: {
+    color: clr.dark,
+    fontSize: 18,
+    marginLeft: 8,
+    fontWeight: '500'
   }
 })

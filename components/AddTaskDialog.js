@@ -43,7 +43,6 @@ const AddTaskDialog = ({
               <Pressable onPress={()=>setAddTaskVisible(false)}>
                 <AntDesign name='closecircle' color={clr.darker} size={28}/>
               </Pressable>
-              
             </View>
             <Text style={{...styles.dialogLabel, marginTop: 8}}>What's the task?</Text>
             <TextInput 
@@ -76,6 +75,11 @@ const AddTaskDialog = ({
                 />
               </View>
             </Pressable>
+            <Text style={{...styles.dialogLabel, marginTop: 8}}>How long will it take?</Text>
+            <View style={styles.hoursContainer}>
+              <Pressable style={styles.hoursInput}/>
+              <Text style={styles.hoursLabel}>Hours</Text>
+            </View>
           </View>
         </View>
       </Modal>
