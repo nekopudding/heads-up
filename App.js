@@ -27,6 +27,7 @@ const fillerList = [
     estTime: 5, //hours
   }
 ];
+let nextId = 4;
 
 
 export default function App() {
@@ -36,7 +37,7 @@ export default function App() {
   const [taskList,setTaskList] = useState([])
   
   const addNewTask = (task) => {
-    const list = [...taskList,task];
+    const list = [...taskList,{id: nextId++, ...task}];
     //sort by earliest due date
     list.sort((a,b) => a.dueDatetime.getTime() - b.dueDatetime.getTime());
     setTaskList(list);
@@ -64,6 +65,7 @@ export default function App() {
     <AddTaskDialog
       addTaskVisible={addTaskVisible}
       setAddTaskVisible={setAddTaskVisible}
+      addNewTask={addNewTask}
     />
     </>
   );

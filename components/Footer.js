@@ -22,7 +22,7 @@ const Footer = ({
       <Ripple rippleColor={clr.light} rippleSize={200} 
         rippleContainerBorderRadius={9999} 
         style={[styles.buttonContainer,
-        {opacity: pressAddTask ? 0.6 : 1, left:-20}]} 
+        {opacity: pressSetting ? 0.6 : 1, left:-20}]} 
         onPressIn={()=>setPressSetting(true)} 
         onPressOut={()=>setPressSetting(false)}
         onPress={()=>setSettingsVisible(true)}

@@ -69,10 +69,10 @@ export const styles = StyleSheet.create({
   },
   addTaskDialog: {
     width: 300,
-    height: 380,
     backgroundColor:clr.light,
     borderRadius: 16,
     padding: 16,
+    paddingBottom: 20
   },
   dialogTitle: {
     textTransform: 'capitalize',
@@ -93,27 +93,69 @@ export const styles = StyleSheet.create({
     backgroundColor: clr.dark,
     marginVertical: 4,
     color: clr.light,
-    fontSize: 18,
+    fontSize: 18
   },
   hoursContainer: {
     flexDirection:'row',
-    alignItems:'center'
+    alignItems:'center',
+    zIndex: 100,//lets dropdown show through
   },  
-  hoursInput: {
-    justifyContent:'center',
-    paddingHorizontal: 16,
-    height: 48, 
-    width: 40,
-    borderRadius: 16,
+  hours: { //base, fades out on press
     backgroundColor: clr.dark,
     marginVertical: 4,
-    color: clr.light,
-    fontSize: 18,
+    borderRadius: 16,
+    borderWidth: 0
   },
   hoursLabel: {
     color: clr.dark,
     fontSize: 18,
     marginLeft: 8,
     fontWeight: '500'
+  },
+  hoursContainer2: { //lies beneath base
+    width: 100,
+    borderRadius: 16
+  },
+  hoursText: {
+    color: clr.dark,
+    fontSize: 18,
+    marginLeft: 8
+  },
+  hoursItemLabel: {
+    color: clr.light,
+    fontSize: 18,
+    marginLeft: 8,
+    fontWeight: '500'
+  },
+  dropdown: {
+    backgroundColor: clr.light,
+    borderColor: clr.dark,
+    borderRadius: 8,
+    borderWidth: 2
+  },
+  submitContainer: {
+    alignItems: 'center',
+    marginTop: 16
+  },
+  submit: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height:2
+    },
+    shadowOpacity: 0.4,
+    shadowRadius:3,
+    height: 48,
+    borderRadius: 20,
+    backgroundColor: clr.darker,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    elevation: 0
+  },
+  submitText: {
+    color: clr.light,
+    fontWeight: '700',
+    fontSize: 18,
   }
 })

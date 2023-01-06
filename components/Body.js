@@ -7,7 +7,8 @@ const Body = ({taskList}) => {
   return (
     <View style={{
       overflow: 'hidden',
-      flexGrow: 1
+      flexGrow: 1,
+      flexShrink: 1
     }}>
       <Text style={{...styles.h2,marginTop: 28,}}>most recent due:</Text>
       <View style={{
